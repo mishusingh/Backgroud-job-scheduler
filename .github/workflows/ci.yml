@@ -21,6 +21,13 @@ jobs:
          java-version: '17'
          distribution: 'temurin'
 
+     - name: 🔧 Make mvnw executable
+       run: |
+           ls -alh ./mvnw   # List file permissions before chmod
+           chmod +x ./mvnw
+           ls -alh ./mvnw   # List file permissions after chmod
+
+
      - name: 🛠️ Build with Maven
        run: ./mvnw clean install
 
